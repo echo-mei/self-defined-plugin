@@ -1,0 +1,70 @@
+@charset "utf-8";
+/*contextMenu.css样式*/
+.contextMenuPlugin {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    min-width: 100px;
+    display: none;
+    font-size: 14px;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    list-style: none;
+    padding: 5px 0px;
+    margin: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.15);
+    border-image: initial;
+    border-radius: 4px;
+}
+
+.contextMenuPlugin > li {
+    margin: 0;
+    padding: 0;
+}
+
+.contextMenuPlugin > li > a {
+    display: block;
+    padding: 0 10px;
+    color: #333;
+    height: 28px;
+    line-height: 28px;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.contextMenuPlugin > li > a img {
+    position: absolute;
+    left: 3px;
+    margin-top: -2px;
+    width: 16px;
+    height: 16px;
+}
+.contextMenuPlugin > li > a:hover {
+    background-color: rgb(245,245,245);
+}
+
+.contextMenuPlugin > li.divider {
+    border-top: 1px solid #e7e3e7;
+    border-bottom: 1px solid #ffffff;
+    height: 0;
+    padding: 0;
+    margin: 5px 0 5px 27px;
+}
+.contextMenuPlugin > .header {
+    background: rgb(90,90,90); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(90,90,90,1) 0%, rgba(20,20,20,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(90,90,90,1)), color-stop(100%,rgba(20,20,20,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(90,90,90,1) 0%,rgba(20,20,20,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(90,90,90,1) 0%,rgba(20,20,20,1) 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, rgba(90,90,90,1) 0%,rgba(20,20,20,1) 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5a5a5a', endColorstr='#141414',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, rgba(90,90,90,1) 0%,rgba(20,20,20,1) 100%); /* W3C */
+    position: relative;
+    cursor: default;
+    padding: 3px 3px 3px 3px;
+    color: #ffffff;
+}

@@ -1,0 +1,173 @@
+@charset "utf-8";
+/*复选框样式 and 单选框样式*/
+.check-box{
+    display: inline-block;
+    line-height: 26px;
+    height: 26px;
+    font-size: 14px;
+    color: #444;
+    padding-left: 22px;
+    background: url(../img/checkbox.png) no-repeat 4px 50% transparent;
+    background-size:15px;
+}
+.check-box.selected{background-image: url(../img/checkbox-selected.png);}
+.radio-box {
+    display: inline-block;
+    line-height: 26px;
+    height: 26px;
+    font-size: 14px;
+    color: #444;
+    padding-left: 15px;
+    background: url(../img/radio.png) no-repeat left transparent;
+}
+.radio-box.selected {  background-image: url(../img/radio-selected.png);  }
+/*分组选择*/
+.groupselect{
+    position: absolute;
+    z-index: 99;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 15px #d4d7db;
+    -moz-box-shadow: 0px 0px 15px #d4d7db;
+    box-shadow: 0px 0px 15px #d4d7db;
+}
+.groupselect-title {
+    width: 100%;
+    height: 30px;
+    color: #333;
+    line-height: 30px;
+    text-indent: 15px;
+    background: #fff;
+    border-bottom: #ccc 1px dotted;
+}
+.groupselect-title .tip {  font-size: 12px;  color: #f79b92;  margin-left: 5px;}
+.groupselect-title a.close {
+    width: 12px;
+    height: 12px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: url(../img/close16-gray.png) no-repeat center top;
+}
+.groupselect-title a.close:hover {  background-image: url(../img/close16-red.png);  }
+.groupselect-tag {  width: 100%;  padding: 5px 15px;  background: #fff;  }
+.groupselect-tag dl {  width: 100%;  line-height: 30px;  display: table;  font-size: 12px;  }
+.groupselect-tag dt {  width: 50px;  display: table-cell;  color: #e05447;  vertical-align: middle;  }
+.groupselect-tag dd {  display: table-cell;  }
+.groupselect-tag a.btn {
+    background: #f2766a;
+    padding: 0 15px;
+    color: #fff;
+    width: auto;
+    border-radius: 4px;
+    margin: 3px 0 0 0;
+    line-height: 24px;
+    float: right;
+}
+.groupselect-tag dd a {
+    margin: 0 10px 0 0;
+    color: #333;
+    display: block;
+    float: left;
+    max-width: 158px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.groupselect-main {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: calc(100% - 70px);
+    border: #eee 1px solid;
+}
+.groupselect-main .menu {
+    width: 185px;
+    z-index: 2;
+    float: left;
+    background: #fff;
+    height: 100%;
+    overflow: auto;
+}
+.groupselect-main .menu li {
+    position: relative;
+    width: 100%;
+    padding: 5px;
+    cursor: pointer;
+    color: #666;
+    font-size: 14px;
+    text-indent: 10px;
+    border-bottom: #eee 1px solid;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.groupselect-main .menu li.active {  color: #e05447;  }
+.groupselect-main .menu li.active:after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 1px;
+    height: 100%;
+    right: -1px;
+    top:0;
+    background-color: #FFFFFF;
+}
+.groupselect-main .menu li ul{  margin-left: 10px;  }
+.groupselect-main .menu li ul li:last-of-type{border-bottom: none;text-indent: 4px;}
+.groupselect-main .sub-menu {
+    overflow: auto;
+    font-size: 14px;
+    height: 100%;
+    padding: 10px;
+    background: #fff;
+    border-left: 1px solid #eee;
+}
+.groupselect-main .sub-menu .search{  width: 100%; position: relative;  }
+.groupselect-main .sub-menu .search input{
+    width: 100%;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    border: 1px solid #d9dfe9;
+    border-radius: 4px;
+}
+.groupselect-main .sub-menu .search i {
+    position: absolute;
+    display: inline-block;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    background: url(../img/search.png)no-repeat center transparent;
+    cursor: pointer;
+}
+.groupselect-main .sub-menu-div{display: none;padding: 5px 0;}
+.groupselect-main .sub-menu-div dl {
+    width: 100%;
+    display: table;
+    font-size: 12px;
+    padding: 4px 0 2px 0;
+    border-bottom: #eee 1px dotted;
+}
+.groupselect-main .sub-menu-div dl dt{
+    display: table-cell;
+    width: 90px;
+    color: #333;
+    padding: 2px 10px 0 0;
+    vertical-align: top;
+}
+.groupselect-main .sub-menu-div dl dd {
+    display: table-cell;
+}
+.groupselect-main .sub-menu-div a{
+    margin: 1px 3px;
+    color: #666;
+    font-size: 12px;
+    text-align: left;
+    display: block;
+    float: left;
+    width: calc(25% - 6px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

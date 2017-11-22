@@ -1,0 +1,338 @@
+@charset "utf-8";
+/********************************自定义查询*******************************/
+.search-wrapper div,
+.search-wrapper dl,
+.search-wrapper dt,
+.search-wrapper dd,
+.search-wrapper ul,
+.search-wrapper ol,
+.search-wrapper li,
+.search-wrapper a ,
+.search-wrapper input,
+.search-wrapper select,
+.search-wrapper textarea,
+.search-wrapper span{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.search-wrapper{
+    background-color: #ffffff;
+    position: relative;
+}
+.search-cont {
+    position: relative;
+    background-color: #ffffff;
+}
+/*复选框样式 and 单选框样式*/
+.check-box{
+    display: inline-block;
+    line-height: 26px;
+    height: 26px;
+    font-size: 14px;
+    color: #444;
+    padding-left: 22px;
+    background: url(../../images/components/hadle_btn/checkbox.png) no-repeat 4px 50% transparent;
+    background-size:15px;
+}
+.check-box.selected{background-image: url(../../images/components/hadle_btn/checkbox-selected.png);}
+.radio-box {
+    display: inline-block;
+    line-height: 26px;
+    height: 26px;
+    font-size: 14px;
+    color: #444;
+    padding-left: 15px;
+    background: url(../../images/components/hadle_btn/radio.png) no-repeat left transparent;
+}
+.radio-box.selected {  background-image: url(../../images/components/hadle_btn/radio-selected.png);  }
+/*信息查询项：收起展开*/
+.fold-wrap{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 14px;
+    color: #6a6c6f;
+    height: 26px;
+    line-height: 24px;
+    padding: 0 24px 0 8px;
+    background: url("../img/up.png") no-repeat 90% #fafafa;
+    background-size: 15px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.fold-wrap:hover{    background-color: #fafafa;}
+.fold-wrap.fold {
+    float: right;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-left:5px;
+    background-image: url("../img/down.png") ;
+}
+/*更多：收起展开*/
+.search-more{
+    position: relative;
+    float: right;
+    height: 26px;
+    width: 26px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    background-color: #fafafa;
+    box-shadow: inset 0 1px 0 #fff, 0 1px 0 rgba(0,0,0,.05);
+    -webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 0 rgba(0,0,0,.05);
+}
+.search-more i {
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: url(../img/search_drop_arrow.png) no-repeat 0 0;
+}
+.search-more:hover {
+    border: 1px solid #ccc;
+}
+.search-more:hover i {
+    background: url(../img/search_drop_arrow.png) no-repeat 0 -30px;
+}
+.search-more.search-less {
+    background-color: #ededed;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05), 0 1px 0 #FFF;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05), 0 1px 0 #FFF;
+}
+.search-more.search-less i {
+    background: url(../img/search_drop_arrow.png) no-repeat 0 -60px;
+}
+.search-more.search-less:hover {
+    background-color: #F2F2F2;
+    border: 1px solid #ccc;
+}
+/*筛选条件增加*/
+.search-add{
+    position: relative;
+    float: right;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    padding: 0px 6px 0px 24px;
+    font-size: 14px;
+     color: #6a6c6f;
+    border: 1px dashed #727477;
+    background-color: #fafafa;
+    cursor: pointer;
+}
+.search-add i{
+    position: absolute;
+    font-size: 20px;
+    left: 6px;
+    top:-1px;
+}
+.lock-icon{
+    display: block;
+    position: absolute;
+    top:0;
+    right: 20px;
+    width: 12px;
+    height: 12px;
+    background: url("../img/lock.png")no-repeat center transparent;
+}
+
+
+/*自定义查询 => 常用查询 & 筛选条件 => 主内容区*/
+.search-cont .search-block {
+    padding: 5px 10px;
+}
+.search-cont .search-title{
+    float: left;
+    line-height: 26px;
+    height: 26px;
+    padding: 0 5px;
+    color: #999;
+    font-size: 14px;
+}
+.search-cont .search-list{
+    overflow: auto;
+}
+
+
+/*自定义查询 => 常用查询*/
+.search-common .search-block {
+    overflow: hidden;
+}
+.search-common .search-block {
+    height: 35px;
+}
+.search-common .search-list li {
+    position: relative;
+    display: inline-block;
+    width: 17%;
+    margin-right: 2%;
+}
+.search-common .search-list li input{
+    width: calc(100% - 30px);
+    height: 26px;
+    line-height: 26px;
+    padding-left: 2px;
+    font-size: 14px;
+    border: none;
+    background: none;
+    margin-right: 5px;
+    cursor: pointer;
+    float: left;
+}
+.search-common .search-list li .operate-icon{
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: url("../img/classify.png")no-repeat center transparent;
+    cursor: pointer;
+    position: relative;
+    top: 3px;
+}
+.search-common .search-list li input:hover{
+    color: #1cc6a3;
+    text-decoration: underline;
+}
+.search-common .search-list li .borderOne{
+    border:1px solid #ccc;
+}
+.search-common .search-list li .borderNone{
+    border:none;
+}
+
+/*自定义查询 => 信息查询表单区域*/
+.search-form.search-block{
+    padding: 10px;
+    position: relative;
+    background-color: #ffffff;
+}
+.search-form-wrap{
+    border:1px solid #ced0da;
+    position: relative;
+}
+.search-form .sf-title {
+    position: absolute;
+    top:-10px;
+    left: 30px;
+    color: #1cc6a3;
+    font-size: 14px;
+    padding: 0 10px;
+    background-color: #ffffff;
+}
+.search-form .sf-cont{
+    padding: 5px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.search-form .sf-cont-item{
+    float: left;
+    width: 24%;
+    margin-right: 1%;
+    margin-top: 10px;
+    height: 30px;
+    position: relative;
+}
+.search-form .sf-cont-item dt{
+    float:left;
+    width: 100px;
+    height: 28px;
+    line-height: 28px;
+    padding-right: 4px;
+    color: #333436;
+    font-size: 14px;
+    text-align: right;
+}
+.search-form .sf-cont-item dd{
+    float:left;
+    width: calc(100% - 100px);
+    position: relative;
+}
+.search-form .sf-cont-item dd>input,.search-form .sf-cont-item dd>select{
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    border:1px solid #d9dfe9;
+    border-radius: 4px;
+    color: #333436;
+    font-size: 14px;
+}
+
+.search-form .sf-cont-item .sf-range-wrap>input{
+    width: calc(50% - 5px);
+}
+.search-form .sf-cont-item .sf-range-wrap .line{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    height: 1px;
+    width: 8px;
+    margin-left: -4px;
+    background-color: #999999;
+}
+.search-form .sf-btn-wrap{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0 5px 0;
+}
+.search-form .sf-btn-wrap button{
+    padding: 6px 30px;
+    font-size: 14px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.search-form .sf-btn-wrap button.btn-search{background-color: #1cc6a3;color: #ffffff;border: 1px solid #1cc6a3;}
+.search-form .sf-btn-wrap button.sf-btn-clear{
+    border: 1px solid #d9dfe9;
+    background-color: #f8f9fb;
+    color: #6a6c6f;
+}
+
+@media screen and (max-width: 1600px){
+    .search-form .sf-cont-item{
+        float: left;
+        width: 32%;
+        margin-right: 1%;
+        margin-top: 10px;
+    }
+}
+
+/*自定义统计样式*/
+.statistics-form .sf-cont .sf-cont-item{  width: 100%;  }
+.statistics-form.search-form .sf-cont-item dd>input, .statistics-form.search-form .sf-cont-item dd>select{width: 60%;}
+.statistics-form .operate-wrap{display: inline-block;}
+.statistics-form .operate-wrap a{margin-left: 10px;vertical-align: middle;}
+.statistics-form .operate-wrap a.del-btn{padding-left: 6px;}
+.statistics-form .sf-btn-wrap .sf-btn{  display: inline-block;margin-left: -170px;}
+.statistics-form .sf-btn-wrap .search-add{  float: left;  margin-left: 10px;}
+.statistics-form .multi-input-wrap{width: 60%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

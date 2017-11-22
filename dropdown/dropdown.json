@@ -1,0 +1,12 @@
+[
+  {"value" : "1","text":"研究生" },
+  {"value" : "2","text":"博士研究生" },
+  {"value" : "3","text":"硕士研究生" },
+  {"value" : "4","text":"本科" },
+  {"value" : "5","text":"大专" },
+  {"value" : "6","text":"中专" },
+  {"value" : "7","text":"高中" },
+  {"value" : "8","text":"初中" },
+  {"value" : "9","text":"小学" },
+  {"value" : "10","text":"其他" }
+]

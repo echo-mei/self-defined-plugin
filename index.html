@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>各插件demo展示</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="contextMenu/contextMenu.css">
+    <link rel="stylesheet" href="multiInput/multiInput.css">
+    <link rel="stylesheet" href="groupSelect/groupSelect.css">
+    <link rel="stylesheet" href="dropdown/dropdown.css">
+    <link rel="stylesheet" href="dropdown/zTree_v3/css/zTreeStyle/zTreeStyle.css">
+    <style>
+        h3{
+            background-color: #aaaaaa;
+            color: #FFFFFF;
+            line-height: 40px;
+            padding-left: 20px;
+            font-weight: bold;
+        }
+        div{position: relative;}
+        button.btn{
+            background-color: #1cc6a3;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 30px;
+            margin: 10px;
+        }
+        pre{display: inline-block;}
+        dl{padding: 10px 0;}
+        dl dt,dl dd{display: inline-block;}
+        dl dt{width: 300px;position: relative;}
+        dl dt input{width: 100%;height: 30px;line-height: 30px;border: 1px solid #d9dfe9;font-size: 14px;}
+    </style>
+</head>
+<body style="background: #edf0f5;min-width: 1280px;padding-bottom: 100px;">
+<h3>鼠标右键效果demo</h3>
+<div id="context-menu" style="background-color: #FFFFFF;padding-left: 20px">
+    <p>右键点击该区域</p>
+    <pre>
+    $("#context-menu").contextPopup({
+        items: [
+            {label:'加载', action:function() {
+                alert("您点击了加载！");
+            } },
+            {label:'重命名', action:function() {
+               alert("您点击了重命名！");
+            } },
+            {label:'固定',action:function() {
+                alert("您点击了固定！");
+             } },
+            {label:'删除',action:function() {
+                alert("您点击了删除！");
+            } }
+        ]
+    });
+    </pre>
+</div>
+
+<h3>分组选择demo(支持二级、三级数据)</h3>
+<div style="background-color: #FFFFFF;padding-left: 20px">
+    <div style="display: inline-block;vertical-align: top;">
+        <button id="gs-duoxuan" class="btn">多选</button>
+        <br>
+        <pre>
+    $("#gs-duoxuan").gruopSelect({
+        dataUrl:"groupSelect/groupselect.json",
+        wrapStyle:{
+            top:"-150px",
+            left:"105px",
+            width:"800px",
+            height:"370px"
+        },
+        onClickSure: function() {
+            alert("你选中的是"+this.getSelectedItems());
+        }
+    });
+        </pre>
+    </div>
+    <div style="display: inline-block;vertical-align: top;">
+        <button id="gs-danxuan" class="btn">单选</button>
+        <br>
+        <pre>
+    $("#gs-danxuan").gruopSelect({
+        dataUrl:"groupSelect/groupselect.json",
+        singleSelect:true,
+        wrapStyle:{
+            top:"-120px",
+            left:"105px",
+            width:"700px",
+            height:"300px"
+        },
+        onClickSure: function() {
+            alert("你选中的是"+this.getSelectedItems());
+        }
+    });
+        </pre>
+    </div>
+</div>
+
+<h3>下拉多选及下拉树demo</h3>
+<div style="background-color: #FFFFFF;padding-left: 20px">
+    <div style="display: inline-block;vertical-align: top;margin: 20px;">
+        <dl>
+            <dd>下拉多选</dd>
+            <dt>
+                <input id="dropdownId" type="hidden">
+                <input id="dropdownName" type="text" readonly>
+            </dt>
+        </dl>
+        <pre>
+$("#dropdownName").dropdown({
+        dataUrl:"dropdown/dropdown.json",
+        valueField:"value",
+        textField:"text",
+        idSaveEle:$("#dropdownId")
+    });
+        </pre>
+    </div>
+    <div style="display: inline-block;vertical-align: top;margin: 20px;">
+        <dl>
+            <dd>下拉多选树</dd>
+            <dt>
+                <input id="dropdownTreeId" type="hidden">
+                <input id="dropdownTreeName" type="text" readonly>
+            </dt>
+        </dl>
+        <pre>
+  $('#dropdownTreeName').dropdownTree({
+        zNodes: zNodes,
+        treeSettings:setting,
+        idSaveEle:$("#dropdownTreeId")
+    });
+        </pre>
+    </div>
+</div>
+
+<h3>输入多值demo</h3>
+<div style="background-color: #FFFFFF;padding-left: 20px">
+    <dl>
+        <dd>请输入多个值，Enter分隔</dd>
+        <dt>
+            <input type="text" id="multiInput">
+        </dt>
+    </dl>
+    <pre>
+     $("#multiInput").multi  Input();
+    </pre>
+</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="dropdown/zTree_v3/js/jquery.ztree.all-3.5.min.js"></script>
+<script src="multiInput/jquery.multi.input.js"></script>
+<script src="contextMenu/jquery.contextMenu.js"></script>
+<script src="dropdown/jquery.dropdown.tree.js"></script>
+<script src="dropdown/jquery.dropdown.js"></script>
+<script src="groupSelect/jquery.group.select.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

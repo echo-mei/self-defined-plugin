@@ -1,0 +1,50 @@
+@charset "utf-8";
+/*多值输入*/
+.multi-input-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 1px solid #d9dfe9;
+    height: 28px;
+    border-radius: 4px;
+    background-color: #fff;
+    z-index: 3;
+    overflow: hidden;
+}
+.multi-input-wrap .mi-input{
+    width: 50px;
+    border: none;
+    font-size: 14px;
+    height: 26px;
+    line-height: 26px;
+}
+.multi-input-wrap ol.mi-list{
+    display: inline;
+    margin-left: 4px;
+}
+.multi-input-wrap ol.mi-list li{
+    display: inline-block;
+    font-size: 14px;
+    padding: 0 2px;
+    border-radius: 2px;
+    background-color: #eeeeee;
+    margin-left: 4px;
+}
+.multi-input-wrap ol.mi-list li span{
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    line-height: 20px;
+}
+.multi-input-wrap ol.mi-list li span.mi-remove {
+    font-size: 22px;
+    color: #999;
+    width: 20px;
+    line-height: 18px;
+    text-align: center;
+    cursor: pointer;
+}
+.multi-input-wrap ol.mi-list li span.mi-remove:hover{
+    color: #ff0000;
+}

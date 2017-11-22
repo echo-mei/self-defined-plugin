@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* 
+	重置页面默认CSS
+	引入文件时，应放在CSS中的第一个
+*/
+.clean{ clear:both; height:0; font-size: 1px; line-height: 0px; overflow:hidden; padding:0}
+.clear:after{display:block;clear:both;height:0px;margin-top:-1px;content:''}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,p {padding: 0;margin: 0;}
+table {border-collapse: collapse;border-spacing: 0;}
+a{ cursor:pointer;color:#000;text-decoration:none}
+fieldset,img {border: 0;}
+address,caption,cite,code,dfn,em,strong,th,var,i {font-weight: normal;font-style: normal;}
+ol,ul {list-style: none;}
+caption,th {text-align: left;}
+h1,h2,h3,h4,h5,h6,i {font-weight: normal;font-size: 100%;}
+q:before,q:after {content:'';}
+abbr,acronym { border: 0;} 
+body,button,input,select,table,textarea{font: normal 100% 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;font-size:16px;line-height:1.25em;}
+body{ height:100%; font: normal 100% 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif; }
+.clear{clear: both;}
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.clearfix{zoom:1}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+    border-color: #1cc6a3;
+    color:#1cc6a3;
+    outline: 0px none;
+}
+.ellipsis{
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.box-sizing{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+div, dl, dt, dd, ul, ol, li, a , input, select, textarea, span{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+

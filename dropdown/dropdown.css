@@ -1,0 +1,90 @@
+@charset "utf-8";
+/*复选框样式 and 单选框样式*/
+.check-box{
+    display: inline-block;
+    line-height: 26px;
+    height: 26px;
+    font-size: 14px;
+    color: #444;
+    padding-left: 22px;
+    background: url(../img/checkbox.png) no-repeat 4px 50% transparent;
+    background-size:15px;
+}
+.check-box.selected{background-image: url(../img/checkbox-selected.png);}
+.radio-box {
+    display: inline-block;
+    line-height: 26px;
+    height: 26px;
+    font-size: 14px;
+    color: #444;
+    padding-left: 15px;
+    background: url(../img/radio.png) no-repeat left transparent;
+}
+.radio-box.selected {  background-image: url(../img/radio-selected.png);  }
+/*下拉框:多选、单选*/
+.dropdown-multiple {
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    z-index: 98;
+    width: 100%;
+    color: #444;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid #d9dfe9;
+}
+.dropdown-main{
+    max-height: 200px;
+    overflow: auto;
+    padding: 5px;
+}
+.dropdown-btn {
+    margin-top: 5px;
+    text-align: right;
+    background-color: #f5f5f5;
+    width: 100%;
+    border-top: 1px solid #e3e3e3;
+    padding: 3px 5px;
+}
+.dropdown-btn button {
+    font-size: 12px;
+    height: 20px;
+    margin-left: 5px;
+}
+.dropdown-search{
+    width: 100%;
+    padding: 5px;
+    position: relative;
+}
+.dropdown-search>input{
+    width: 100%;
+    border: 1px solid #d9dfe9;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+}
+.dropdown-search i{
+    position: absolute;
+    display: inline-block;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    background: url("../img/search.png")no-repeat center transparent;
+    cursor: pointer;
+}
+.dropdown-main .check-box{margin-right: 10px;}
+/*科室树多选*/
+.dropdown-multiple .ztree li{line-height: 20px;}
+.dropdown-multiple .ztree li a.curSelectedNode {
+    background-color: transparent;
+    border: none;
+    color: black;
+    opacity:1 ;
+}
+.dropdown-multiple .ztree li a:hover {
+    text-decoration: none;
+    color: #1cc6a3;
+}
+.dropdown-multiple .ztree li a{  color: #282828;}
+.dropdown-multiple .ztree li span{font-size: 12px;font-family: "Microsoft Yahei", Helvetica, "pragmatica-web", Arial, sans-serif;}

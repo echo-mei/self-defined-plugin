@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义统计-综合各个插件的demo</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="search_unit.css">
+    <link rel="stylesheet" href="../dropdown/zTree_v3/css/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" href="../contextMenu/contextMenu.css">
+    <link rel="stylesheet" href="../multiInput/multiInput.css">
+    <link rel="stylesheet" href="../groupSelect/groupSelect.css">
+    <link rel="stylesheet" href="../dropdown/dropdown.css">
+    <link rel="stylesheet" href="../dropdown/zTree_v3/css/zTreeStyle/zTreeStyle.css">
+</head>
+<body>
+<div class="search-wrapper">
+    <!--常用查询-->
+    <div class="search-cont search-common" id="search_common">
+        <div class="search-block">
+            <div class="search-more"><i></i></div>
+            <span class="search-title">常用查询：</span>
+            <ul class="search-list">
+                <li><input class="ellipsis" type="text" title="所在科室,内科;学历,本科;" value="所在科室,内科;学历,本科;" readonly>
+                    <i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="所在科室,内科;人员状态,在职;学历,博士;" value="所在科室,内科;人员状态,在职;学历,博士;"
+                           readonly><i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="所在科室,内科;工号,12990;姓名,张小无;人员状态,在职,试用期,长期休假;"
+                           value="所在科室,内科;工号,12990;姓名,张小无;人员状态,在职,试用期,长期休假;" readonly><i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="人员类别,正式工,临聘人员;人员状态,在职,试用期,长期休假;"
+                           value="人员类别,正式工,临聘人员;人员状态,在职,试用期,长期休假;" readonly><i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="婚姻状况,已婚;户口所在地,深圳;政治面貌,党员;"
+                           value="婚姻状况,已婚;户口所在地,深圳;政治面貌,党员;" readonly><i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="所在科室,内科;工号,12990;姓名,张小无;人员状态,在职,试用期,长期休假;"
+                           value="所在科室,内科;工号,12990;姓名,张小无;人员状态,在职,试用期,长期休假;" readonly><i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="所在科室,内科;学历,本科;" value="所在科室,内科;学历,本科;" readonly><i
+                        class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="所在科室,内科;人员状态,在职;学历,博士;" value="所在科室,内科;人员状态,在职;学历,博士;"
+                           readonly><i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="所在科室,内科;工号,12990;姓名,张小无;人员状态,在职,试用期,长期休假;"
+                           value="所在科室,内科;工号,12990;姓名,张小无;人员状态,在职,试用期,长期休假;" readonly><i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="人员类别,正式工,临聘人员;人员状态,在职,试用期,长期休假;"
+                           value="人员类别,正式工,临聘人员;人员状态,在职,试用期,长期休假;" readonly><i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="婚姻状况,已婚;户口所在地,深圳;政治面貌,党员;"
+                           value="婚姻状况,已婚;户口所在地,深圳;政治面貌,党员;" readonly><i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="所在科室,内科;工号,12990;姓名,张小无;人员状态,在职,试用期,长期休假;"
+                           value="所在科室,内科;工号,12990;姓名,张小无;人员状态,在职,试用期,长期休假;" readonly><i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="所在科室,内科;学历,本科;" value="所在科室,内科;学历,本科;" readonly><i
+                        class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="所在科室,内科;人员状态,在职;学历,博士;" value="所在科室,内科;人员状态,在职;学历,博士;"
+                           readonly><i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="所在科室,内科;工号,12990;姓名,张小无;人员状态,在职,试用期,长期休假;"
+                           value="所在科室,内科;工号,12990;姓名,张小无;人员状态,在职,试用期,长期休假;" readonly><i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="人员类别,正式工,临聘人员;人员状态,在职,试用期,长期休假;"
+                           value="人员类别,正式工,临聘人员;人员状态,在职,试用期,长期休假;" readonly><i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="婚姻状况,已婚;户口所在地,深圳;政治面貌,党员;"
+                           value="婚姻状况,已婚;户口所在地,深圳;政治面貌,党员;" readonly><i class="operate-icon"></i></li>
+                <li><input class="ellipsis" type="text" title="所在科室,内科;工号,12990;姓名,张小无;人员状态,在职,试用期,长期休假;"
+                           value="所在科室,内科;工号,12990;姓名,张小无;人员状态,在职,试用期,长期休假;" readonly><i class="operate-icon"></i></li>
+            </ul>
+        </div>
+    </div>
+    <div  class="search-cont search-filter" id="search_main">
+        <!--统计查询表单区域-->
+        <div class="search-block search-form statistics-form" id="statistics_form">
+            <div class="search-form-wrap">
+                <span class="sf-title">统计条件</span>
+                <form class="sf-cont clearfix">
+                    <dl class="sf-cont-item">
+                        <dt class="ellipsis">所在科室</dt>
+                        <dd>
+                            <input type="hidden" name="ksId" id="ksId">
+                            <input class="ellipsis" type="text" name="ksName" id="ksName" readonly>
+                            <div class="operate-wrap">
+                                <a class="check-box">行显示</a>
+                                <a class="check-box">列显示</a>
+                                <a class="search-add del-btn">删除</a>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="sf-cont-item">
+                        <dt class="ellipsis">姓名</dt>
+                        <dd>
+                            <input class="ellipsis" type="text" id="sf-name">
+                            <div class="operate-wrap">
+                                <a class="check-box">行显示</a>
+                                <a class="check-box">列显示</a>
+                                <a class="search-add del-btn">删除</a>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="sf-cont-item">
+                        <dt class="ellipsis">专业技能</dt>
+                        <dd>
+                            <input class="ellipsis" type="text">
+                            <div class="operate-wrap">
+                                <a class="check-box">行显示</a>
+                                <a class="check-box">列显示</a>
+                                <a class="search-add del-btn">删除</a>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="sf-cont-item">
+                        <dt class="ellipsis">学历</dt>
+                        <dd>
+                            <input type="hidden" name="xlId" id="xlId">
+                            <input class="ellipsis" id="xlName" name="xlName" type="text" readonly>
+                            <div class="operate-wrap">
+                                <a class="check-box">行显示</a>
+                                <a class="check-box">列显示</a>
+                                <a class="search-add del-btn">删除</a>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="sf-cont-item">
+                        <dt class="ellipsis">人员类别</dt>
+                        <dd>
+                            <select class="ellipsis">
+                                <option>正式工</option>
+                                <option>临聘人员</option>
+                                <option>返聘人员</option>
+                                <option>本院规培人员</option>
+                                <option>委培人员</option>
+                                <option>老工勤</option>
+                                <option>专业技术类普通雇员</option>
+                                <option>研究员</option>
+                            </select>
+                            <div class="operate-wrap">
+                                <a class="check-box">行显示</a>
+                                <a class="check-box">列显示</a>
+                                <a class="search-add del-btn">删除</a>
+                            </div>
+                        </dd>
+                    </dl>
+                </form>
+                <div class="sf-btn-wrap">
+                    <div class="search-add" id="search_filter_more_radio"><i>＋</i>添加</div>
+                    <div class="sf-btn">
+                        <a class="check-box">合计</a>
+                        <a class="check-box">百分比</a>
+                        <button class="btn-search btn-default" type="button" id="search_form_btn">查询</button>
+                        <button class="sf-btn-clear btn-default">清空</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="fold-wrap" id="fold">收起<i></i></div>
+</div>
+
+
+<script src="../js/jquery-1.11.1.min.js"></script>
+<script src="../dropdown/zTree_v3/js/jquery.ztree.all-3.5.min.js"></script>
+<script src="../multiInput/jquery.multi.input.js"></script>
+<script src="../contextMenu/jquery.contextMenu.js"></script>
+<script src="../dropdown/jquery.dropdown.tree.js"></script>
+<script src="../dropdown/jquery.dropdown.js"></script>
+<script src="../groupSelect/jquery.group.select.js"></script>
+<script src="self_defined_search.js"></script>
+</body>
+</html>
