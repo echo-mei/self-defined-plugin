@@ -50,6 +50,20 @@ $(function () {
             alert("你选中的是"+JSON.stringify(this.getSelectedItems()));
         }
     });
+    //分组选择 》多选（模态框）
+    $("#gs-modal").gruopSelect({
+        dataUrl:"groupSelect/groupselect.json",
+        modalFlag:true,
+        wrapStyle:{
+            top:($(window).height()-400)/2,
+            left:($(window).width()-800)/2,
+            width:"800px",
+            height:"400px"
+        },
+        onClickSure: function() {
+            alert("你选中的是"+this.getSelectedItems());
+        }
+    });
 
 
     // 下拉多选

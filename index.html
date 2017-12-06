@@ -95,6 +95,25 @@
     });
         </pre>
     </div>
+    <div style="display: inline-block;vertical-align: top;">
+        <button id="gs-modal" class="btn">模态框方式</button>
+        <br>
+        <pre>
+    $("#gs-modal").gruopSelect({
+        dataUrl:"groupSelect/groupselect.json",
+        modalFlag:true,
+        wrapStyle:{
+            top:($(window).height()-400)/2,
+            left:($(window).width()-800)/2,
+            width:"800px",
+            height:"400px"
+        },
+        onClickSure: function() {
+            alert("你选中的是"+this.getSelectedItems());
+        }
+    });
+        </pre>
+    </div>
 </div>
 
 <h3>下拉多选及下拉树demo</h3>

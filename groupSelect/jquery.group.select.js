@@ -16,6 +16,7 @@
         dataUrl: null,
         singleSelect:false,
         maxCount:10,
+        modalFlag:false,
         wrapStyle: {
             top: '0',//弹出层的位置
             left: '0',
@@ -23,20 +24,6 @@
             height: '400px'
         }
     };
-    //判断鼠标在不在弹出层范围内
-    function   checkIn($obj){
-        var str = "";
-        var x=window.event.clientX;
-        var y=window.event.clientY;
-
-        if ($obj.length>0){
-            if(x>$obj.offset().left&&x<($obj.offset().left+$obj.width())&&y>($obj.offset().top)&&y<($obj.offset().top+$obj.height())){
-                return true;
-            }else{
-                return false;
-            }
-        }
-    }
     function GruopSelect(ele, opts) {
         this.ele = ele;
         this.opts = opts = $.extend({},defaults, opts);
@@ -65,6 +52,9 @@
                     "width":this.getOpts().wrapStyle.width,
                     "height":this.getOpts().wrapStyle.height
             });
+            if (this.getOpts().modalFlag){
+                $el.css("position","fixed");
+            }
 
             $.extend(this, {
                 $el: $el,
@@ -82,6 +72,7 @@
                 that._renderMenu(data);
                 that.$gpsMenu.find("ul>li:first").trigger("click");
                 that.getElem().after(that.$el);
+                that._renderMasklayer();
             }) ;
 
             this._initEvents();
@@ -146,6 +137,12 @@
 
                 return $selectBox;
         },
+        _renderMasklayer:function () {
+            console.log(this.getOpts().modalFlag);
+            if(this.getOpts().modalFlag){
+                $("body").append("<div class='groupselect-masklayer'></div>");
+            }
+        },
         _initEvents:function () {
             var that= this;
             // 点击确定按钮执行外部自定义事件
@@ -161,9 +158,10 @@
             });
             //点击body关闭下拉框弹出层
             $(document).click(function(e){
-                var is = checkIn(that.$el);
-                if(!is){
-                    that._destroy();
+                if(!that.getOpts().modalFlag){
+                    if($(e.target).closest(".groupselect").length==0){
+                        that._destroy();
+                    }
                 }
             });
         },
@@ -219,6 +217,9 @@
         },
         _destroy: function () {
             this.$el.remove();
+            if(this.getOpts().modalFlag){
+                $("body").find(".groupselect-masklayer").remove();
+            }
         }
 
     };
