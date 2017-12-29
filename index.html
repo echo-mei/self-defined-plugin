@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="multiInput/multiInput.css">
     <link rel="stylesheet" href="groupSelect/groupSelect.css">
     <link rel="stylesheet" href="dropdown/dropdown.css">
+    <link rel="stylesheet" href="cascadeSelect/cascadeSelect.css">
     <link rel="stylesheet" href="dropdown/zTree_v3/css/zTreeStyle/zTreeStyle.css">
     <style>
         h3{
@@ -116,7 +117,7 @@
     </div>
 </div>
 
-<h3>下拉多选及下拉树demo</h3>
+<h3>下拉选择</h3>
 <div style="background-color: #FFFFFF;padding-left: 20px">
     <div style="display: inline-block;vertical-align: top;margin: 20px;">
         <dl>
@@ -150,6 +151,23 @@ $("#dropdownName").dropdown({
     });
         </pre>
     </div>
+    <br>
+    <div style="display: inline-block;vertical-align: top;margin: 20px;">
+        <dl>
+            <dd>级联选择</dd>
+            <dt>
+                <input id="cascadeSelectId" type="hidden">
+                <input id="cascadeSelectName" type="text" readonly>
+            </dt>
+        </dl>
+        <pre>
+    $("#cascadeSelectName").cascadeSelect({
+    dataUrl:"cascadeSelect/cascadeSelect.json",
+    idSaveEle:$("#cascadeSelectId")
+    });
+        </pre>
+    </div>
+
 </div>
 
 <h3>输入多值demo</h3>
@@ -171,6 +189,7 @@ $("#dropdownName").dropdown({
 <script src="contextMenu/jquery.contextMenu.js"></script>
 <script src="dropdown/jquery.dropdown.tree.js"></script>
 <script src="dropdown/jquery.dropdown.js"></script>
+<script src="cascadeSelect/jquery.cascade.select.js"></script>
 <script src="groupSelect/jquery.group.select.js"></script>
 <script src="js/index.js"></script>
 </body>

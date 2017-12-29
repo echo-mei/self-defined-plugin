@@ -1,0 +1,85 @@
+
+/*复选框样式 and 单选框样式*/
+.check-box{
+    display: inline-block;
+    line-height: 26px;
+    height: 26px;
+    font-size: 14px;
+    color: #444;
+    padding-left: 22px;
+    background: url(../img/checkbox.png) no-repeat 4px 50% transparent;
+    background-size:15px;
+}
+.check-box.selected{background-image: url(../img/checkbox-selected.png);}
+/*级联选择*/
+.radio-box {
+    display: inline-block;
+    line-height: 26px;
+    height: 26px;
+    font-size: 14px;
+    color: #444;
+    padding-left: 15px;
+    background: url(../img/radio.png) no-repeat left transparent;
+}
+.cascadeselect{
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    z-index: 98;
+    color: #444;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid #d9dfe9;
+}
+.cascadeselect-result {
+    width: 100%;
+    padding: 5px;
+    position: relative;
+}
+.cascadeselect-result label{display: inline-block;height: 26px;line-height: 26px;vertical-align: top;}
+.cascadeselect-result .over-tips{display: none;color: #ff0000;}
+.cascadeselect-result .contents{display: inline-block;  max-width: 410px;}
+.cascadeselect-result .contents .check-box-green{margin-right: 5px;}
+.cascadeselect-result .tip {
+    font-size: 12px;
+    color: #fe5621;
+}
+.cascadeselect-main{border-top: 1px solid #d9dfe9;}
+.cascadeselect-main ul{
+    float: left;
+    width: 150px;
+    height: 200px;
+    overflow: auto;
+    border-right: 1px solid #d9dfe9;
+}
+.cascadeselect-main ul:last-of-type{
+    border-right: none;
+}
+.cascadeselect-main ul li{
+    padding: 5px;
+    border-bottom: 1px solid #d9dfe9;
+    cursor: default;
+}
+.cascadeselect-main ul li.active{
+    background-color: #1cc6a3;
+    color: #FFFFFF;
+}
+.cascadeselect-main ul a.check-box-green{
+    width: 120px;
+    margin-right: 5px;
+}
+.cascadeselect-btn {
+    margin-top: 5px;
+    text-align: right;
+    background-color: #f5f5f5;
+    width: 100%;
+    border-top: 1px solid #e3e3e3;
+    padding: 3px 5px;
+}
+.cascadeselect-btn button {
+    font-size: 12px;
+    height: 20px;
+    margin-left: 5px;
+}
