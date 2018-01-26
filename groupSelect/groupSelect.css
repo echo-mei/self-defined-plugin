@@ -61,7 +61,7 @@
 }
 .groupselect-title a.close:hover {  background-image: url(../img/close16-red.png);  }
 .groupselect-tag {  width: 100%;  padding: 5px 15px;  background: #fff;  }
-.groupselect-tag dl {  width: 100%;  line-height: 30px;  display: table;  font-size: 12px;  }
+.groupselect-tag dl {  width: 100%;  line-height: 30px;  display: table;  font-size: 12px;  padding:0; }
 .groupselect-tag dt {  width: 50px;  display: table-cell;  color: #e05447;  vertical-align: middle;  }
 .groupselect-tag dd {  display: table-cell;  }
 .groupselect-tag a.btn {

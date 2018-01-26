@@ -55,6 +55,11 @@
             if (this.getOpts().modalFlag){
                 $el.css("position","fixed");
             }
+            if (!this.getOpts().singleSelect){
+                $el.find("a.btn").after('<a href=\'javascript:void(0)\' class=\'btn-clear\'>清除筛选</a>');
+            }else{
+                $el.find(".groupselect-title .tip").hide();
+            }
 
             $.extend(this, {
                 $el: $el,
