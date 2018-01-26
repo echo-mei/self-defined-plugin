@@ -73,7 +73,11 @@ $(function () {
         textField:"text",
         idSaveEle:$("#dropdownId")
     });
-
+    // 级连选择
+    $("#cascadeSelectName").cascadeSelect({
+        dataUrl:"cascadeSelect/cascadeSelect.json",
+        idSaveEle:$("#cascadeSelectId")
+    });
 
     //多选下拉树(使用ztree树结构)
     $('#dropdownTreeName').dropdownTree({

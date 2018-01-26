@@ -61,7 +61,7 @@
 }
 .groupselect-title a.close:hover {  background-image: url(../img/close16-red.png);  }
 .groupselect-tag {  width: 100%;  padding: 5px 15px;  background: #fff;  }
-.groupselect-tag dl {  width: 100%;  line-height: 30px;  display: table;  font-size: 12px;  }
+.groupselect-tag dl {  width: 100%;  line-height: 30px;  display: table;  font-size: 12px;  padding:0; }
 .groupselect-tag dt {  width: 50px;  display: table-cell;  color: #e05447;  vertical-align: middle;  }
 .groupselect-tag dd {  display: table-cell;  }
 .groupselect-tag a.btn {
@@ -133,16 +133,17 @@
     background: #fff;
     border-left: 1px solid #eee;
 }
-.groupselect-main .sub-menu .search{  width: 100%; position: relative;  }
-.groupselect-main .sub-menu .search input{
+.groupselect-main .sub-menu .gp-search{  width: 100%; position: relative;  }
+.groupselect-main .sub-menu .gp-search input{
     width: 100%;
     height: 26px;
     line-height: 26px;
     font-size: 14px;
     border: 1px solid #d9dfe9;
     border-radius: 4px;
+    text-indent: 4px;
 }
-.groupselect-main .sub-menu .search i {
+.groupselect-main .sub-menu .gp-search i {
     position: absolute;
     display: inline-block;
     right: 10px;
