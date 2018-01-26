@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e64d88bc-fc75-4c03-ab8a-dfece93a546c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dropdown/jquery.dropdown.tree.js" afterPath="$PROJECT_DIR$/dropdown/jquery.dropdown.tree.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/groupSelect/groupSelect.css" afterPath="$PROJECT_DIR$/groupSelect/groupSelect.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/groupSelect/jquery.group.select.js" afterPath="$PROJECT_DIR$/groupSelect/jquery.group.select.js" />
-    </list>
+    <list default="true" id="e64d88bc-fc75-4c03-ab8a-dfece93a546c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -186,7 +182,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/MyWork/医院产品项目/自定义查询/mho-ui-demo/self (3)" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -221,12 +217,12 @@
       <workItem from="1512544809293" duration="2283000" />
       <workItem from="1514528538822" duration="4335000" />
       <workItem from="1516692643224" duration="605000" />
-      <workItem from="1516953460147" duration="2888000" />
+      <workItem from="1516953460147" duration="3554000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10924000" />
+    <option name="totallyTimeSpent" value="11590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
