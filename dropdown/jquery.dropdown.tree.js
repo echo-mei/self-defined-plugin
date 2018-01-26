@@ -65,7 +65,7 @@
             var that = this,
                 id = that.ele.attr("id"),
                 $el = $("<div id='" + id + "_wrap' class='dropdown-multiple "+that.opts.className+"'>" +
-                    "<div class='dropdown-search'><input type='text' class='search-input'/><i></i></div>" +
+                    // "<div class='dropdown-search'><input type='text' class='search-input'/><i></i></div>" +
                     "<div class='dropdown-main'><ul class='ztree' id='"+ id +"_tree'></ul></div>" +
                     "<div class='dropdown-btn'>" +
                         "<button type='button' class='clear-btn'>清除</button>" +
@@ -75,8 +75,8 @@
 
             $.extend(this, {
                 $el: $el,
-                $dpTreeSearchInput: $el.find('.search-input'),
-                $dpTreeSearchIcon: $el.find('.dropdown-search i'),
+                // $dpTreeSearchInput: $el.find('.search-input'),
+                // $dpTreeSearchIcon: $el.find('.dropdown-search i'),
                 $dpTreeUl: $el.find('#'+id+'_tree'),
                 $dpTreeSureBtn: $el.find('.sure-btn'),
                 $dpTreeClearBtn: $el.find('.clear-btn')

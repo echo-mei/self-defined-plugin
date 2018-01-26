@@ -133,16 +133,17 @@
     background: #fff;
     border-left: 1px solid #eee;
 }
-.groupselect-main .sub-menu .search{  width: 100%; position: relative;  }
-.groupselect-main .sub-menu .search input{
+.groupselect-main .sub-menu .gp-search{  width: 100%; position: relative;  }
+.groupselect-main .sub-menu .gp-search input{
     width: 100%;
     height: 26px;
     line-height: 26px;
     font-size: 14px;
     border: 1px solid #d9dfe9;
     border-radius: 4px;
+    text-indent: 4px;
 }
-.groupselect-main .sub-menu .search i {
+.groupselect-main .sub-menu .gp-search i {
     position: absolute;
     display: inline-block;
     right: 10px;

@@ -14,6 +14,7 @@
     "use strict";
     var defaults = {
         dataUrl: null,
+        data:null,
         singleSelect:false,
         maxCount:10,
         modalFlag:false,
@@ -45,7 +46,7 @@
             var $el = $("<div class='groupselect'> " +
                 "<div class='groupselect-title'><b>选择筛选条件</b><span class='tip'>(最多选择"+this.getOpts()["maxCount"]+"项)</span> &nbsp;&nbsp;<span class='tip'></span><a class='close' href='javascript:void(0)'></a></div> " +
                 "<div class='groupselect-tag'><dl><dt>已选择：</dt><dd><a href='javascript:void(0)' class='btn'>确定</a></dd></dl></div>" +
-                "<div class='groupselect-main'><div class='menu' id='firstMenu'></div><div class='sub-menu' id='secondMenu'><div class='search'><input type='text'><i></i></div></div>"+
+                "<div class='groupselect-main'><div class='menu' id='firstMenu'></div><div class='sub-menu' id='secondMenu'><div class='gp-search'><input type='text'><i></i></div></div>"+
                 "</div>").css({
                     "top":this.getOpts().wrapStyle.top,
                     "left":this.getOpts().wrapStyle.left,
@@ -68,12 +69,15 @@
                 $gpsMenu: $el.find('.groupselect-main .menu'),
                 $gpsSubMenu: $el.find('.groupselect-main .sub-menu'),
                 $gpsSureBtn: $el.find('.groupselect-tag .btn'),
-                $gpsCloseIcon:$el.find('.groupselect-title .close')
+                $gpsCloseIcon:$el.find('.groupselect-title .close'),
+                $gpsSearchInput:$el.find('.groupselect-main .gp-search input'),
+                $gpsSearchIcon:$el.find('.groupselect-main .gp-search i')
             });
 
             var that = this;
             // 获取下拉数据
             $.get(that.getOpts()["dataUrl"],function(data){
+                that.opts.data = data;
                 that._renderMenu(data);
                 that.$gpsMenu.find("ul>li:first").trigger("click");
                 that.getElem().after(that.$el);
@@ -94,6 +98,7 @@
                         that.$gpsSubMenu.find("#subMenu_"+item["id"])
                             .show()
                             .siblings("div.sub-menu-div").hide();
+                        that.$gpsSearchInput.val("");
                     })
                     .appendTo($gpsMenuUl);
 
@@ -161,8 +166,32 @@
             this.$gpsCloseIcon.click(function () {
                 that._destroy();
             });
+            //查询input
+            this.$gpsSearchInput.keydown(function(e){
+                e.stopPropagation();
+                // 回车键触发
+                if (e.keyCode == 13) {
+                    that.$gpsSearchIcon.click();
+                }
+            });
+            //查询Icon
+            this.$gpsSearchIcon.click(function(){
+                var searchResult = null;
+                searchResult = that._searchData(that.$gpsSearchInput.val());
+                if(searchResult != null){
+                    if(that.$el.find("div#subMenu_search").length > 0){
+                        that.$el.find("div#subMenu_search").remove();
+                    }
+                    var $subMenuDiv = $("<div class='sub-menu-div' style='display:block;' id='subMenu_search'></div>").appendTo(that.$gpsSubMenu);
+                    $subMenuDiv.siblings("div.sub-menu-div").hide();
+                    $.each(searchResult, function (i, item) {
+                        that._renderSelectBox(item).appendTo($subMenuDiv);
+                    });
+                }
+
+            });
             //点击body关闭下拉框弹出层
-            $(document).click(function(e){
+            $("body").click(function(e){
                 if(!that.getOpts().modalFlag){
                     if($(e.target).closest(".groupselect").length==0){
                         that._destroy();
@@ -219,6 +248,21 @@
             this.$gpsTagDd.find("a.radio-box").remove();
             var $ddItem = $("<a href='javascript:void(0)' id='" + $obj.attr("id") + "' class='radio-box selected'>" + $.trim($obj.html()) + "</a>");
             this.$gpsTagDd.append($ddItem);
+        },
+        _searchData: function($obj){
+            var s_data = eval(this.opts.data);
+            if ($obj == "") return;
+            var arr = [];
+            var patt = new RegExp($obj);
+            for(var i = 0; i < s_data.length; i++){
+                var dtoList = s_data[i].children;
+                for(var j=0;j<dtoList.length;j++){
+                    if(patt.test(dtoList[j].text)){
+                        arr.push(dtoList[j]);
+                    }
+                }
+            }
+            return arr;
         },
         _destroy: function () {
             this.$el.remove();
