@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>下拉插件demo展示</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./jade.dropdown.css" />
+    <link rel="stylesheet" href="./zTree_v3/css/metroStyle/metroStyle.css" />
+    <style>
+      h3 {
+        background-color: #aaaaaa;
+        color: #ffffff;
+        line-height: 40px;
+        padding-left: 20px;
+        font-weight: bold;
+      }
+      div {
+        position: relative;
+      }
+      button.btn {
+        background-color: #1cc6a3;
+        color: #ffffff;
+        border: none;
+        padding: 10px 30px;
+        margin: 10px;
+      }
+      pre {
+        display: inline-block;
+      }
+      dl {
+        padding: 10px 0;
+      }
+      dl dt,
+      dl dd {
+        display: inline-block;
+      }
+      dl dt {
+        width: 300px;
+        position: relative;
+      }
+      dl dt input {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid #d9dfe9;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body style="background: #edf0f5;min-width: 1280px;padding-bottom: 100px;">
+    <h3>下拉选择</h3>
+    <div style="background-color: #FFFFFF;padding-left: 20px">
+      <div style="display: inline-block;vertical-align: top;margin: 20px;">
+        <dl>
+          <dd>下拉单选（单层数据）</dd>
+          <dt>
+            <input id="select0" type="text" readonly />
+          </dt>
+        </dl>
+      </div>
+      <br>
+      <div style="display: inline-block;vertical-align: top;margin: 20px;">
+        <dl>
+          <dd>下拉多选（单层数据）</dd>
+          <dt>
+            <input id="select01" type="text" readonly />
+          </dt>
+        </dl>
+      </div>
+      <br>
+      <div style="display: inline-block;vertical-align: top;margin: 20px;">
+        <dl>
+          <dd>下拉单选树(通过配置设置全展开)</dd>
+          <dt>
+            <input id="select1" type="text" readonly />
+          </dt>
+        </dl>
+      </div>
+      <br>
+      <div style="display: inline-block;vertical-align: top;margin: 20px;">
+        <dl>
+          <dd>下拉单选树(通过数据的open配置设置部分节点展开)</dd>
+          <dt>
+            <input id="select11" type="text" readonly />
+          </dt>
+        </dl>
+      </div>
+      <br>
+      <div style="display: inline-block;vertical-align: top;margin: 20px;">
+        <dl>
+          <dd>下拉单选树-带搜索</dd>
+          <dt>
+            <input id="select2" type="text" readonly />
+          </dt>
+        </dl>
+      </div>
+      <br>
+      <div style="display: inline-block;vertical-align: top;margin: 20px;">
+        <dl>
+          <dd>下拉多选树-带搜索</dd>
+          <dt>
+            <input id="select3" type="text" readonly />
+          </dt>
+        </dl>
+      </div>
+    </div>
+
+    <script src="./jquery-1.11.1.min.js"></script>
+    <script src="./zTree_v3/js/jquery.ztree.all-3.5.min.js"></script>
+    <script src="./jquery.jade.dropdown.js"></script>
+    <script>
+      var dataMaker = function(count) {
+        var nodes = [],
+          pId = -1,
+          min = 10,
+          max = 90,
+          level = 0,
+          curLevel = [],
+          prevLevel = [],
+          levelCount,
+          i = 0,
+          j,
+          k,
+          l,
+          m
+
+        while (i < count) {
+          if (level == 0) {
+            pId = -1
+            levelCount = Math.round(Math.random() * max) + min
+            for (j = 0; j < levelCount && i < count; j++, i++) {
+              var n = { id: i, pId: pId, name: 'Big-' + i }
+              nodes.push(n)
+              curLevel.push(n)
+            }
+          } else {
+            for (l = 0, m = prevLevel.length; l < m && i < count; l++) {
+              pId = prevLevel[l].id
+              levelCount = Math.round(Math.random() * max) + min
+              for (j = 0; j < levelCount && i < count; j++, i++) {
+                var n = {id: i, pId: pId, name: 'Big-' + i }
+                nodes.push(n)
+                curLevel.push(n)
+              }
+            }
+          }
+          prevLevel = curLevel
+          curLevel = []
+          level++
+        }
+        return nodes
+      }
+
+      $(function() {
+        $(".test").on("click.cc",function(){
+          console.log(1213)
+        })
+        // 下拉单选（单层数据）
+        var zNodes0 = [{id:1, pId:0, name:"博士"},
+                        {id:2, pId:0, name:"研究生"},
+                        {id:3, pId:0, name:"本科"},
+                        {id:4, pId:0, name:"大专"},
+                        {id:5, pId:0, name:"中专"},
+                        {id:6, pId:0, name:"高中"},
+                        {id:7, pId:0, name:"初中"},
+                        {id:8, pId:0, name:"小学"},
+                        {id:9, pId:0, name:"其他"}]
+        $('#select0').jadeDropdown({
+          zNodes: zNodes0,
+          className: 'single-dropdown',
+          selectFunc: function(nodes) {
+            var v = ''
+            nodes.forEach(function(item){
+              v += item.name + ','
+            })
+            if (v.length > 0 ) v = v.substring(0, v.length-1);
+            $("#select0").val(v);
+          },
+          treeSetting:{
+            view: {
+              showLine: false
+            }
+          }
+        })
+
+    //     // 下拉多选（单层数据）
+        var zNodes01 = [{id:1, pId:0, name:"博士"},
+                        {id:2, pId:0, name:"研究生"},
+                        {id:3, pId:0, name:"本科"},
+                        {id:6, pId:0, name:"大专"},
+                        {id:1, pId:0, name:"中专"},
+                        {id:2, pId:0, name:"高中"},
+                        {id:3, pId:0, name:"初中"},
+                        {id:6, pId:0, name:"小学"},
+                        {id:6, pId:0, name:"其他"}]
+        $('#select01').jadeDropdown({
+          zNodes: zNodes01,
+          className: 'single-data-dropdown',
+          multiple: {enable: true  },
+          selectFunc: function(nodes) {
+            var v = ''
+            nodes.forEach(function(item){
+              v += item.name + ','
+            })
+            if (v.length > 0 ) v = v.substring(0, v.length-1);
+            $("#select01").val(v);
+          },
+          treeSetting:{
+            view: {
+              showLine: false
+            }
+          }
+        })
+
+        // 下拉单选树
+        var zNodes11 =[
+			{id:1, pId:0, name:"北京"},
+			{id:2, pId:0, name:"天津"},
+			{id:3, pId:0, name:"上海"},
+			{id:6, pId:0, name:"重庆"},
+			{id:4, pId:0, name:"河北省",open:true},
+			{id:41, pId:4, name:"石家庄"},
+			{id:42, pId:4, name:"保定"},
+			{id:43, pId:4, name:"邯郸"},
+			{id:44, pId:4, name:"承德"},
+			{id:5, pId:0, name:"广东省"},
+			{id:51, pId:5, name:"广州"},
+			{id:52, pId:5, name:"深圳"},
+			{id:53, pId:5, name:"东莞"},
+			{id:54, pId:5, name:"佛山"},
+			{id:6, pId:0, name:"福建省"},
+			{id:61, pId:6, name:"福州"},
+			{id:62, pId:6, name:"厦门"},
+			{id:63, pId:6, name:"泉州"},
+			{id:64, pId:6, name:"三明"}
+		 ]
+        $('#select11').jadeDropdown({
+          zNodes: zNodes11,
+          selectFunc: function(nodes) {
+            var v = ''
+            nodes.forEach(function(item){
+              v += item.name + ','
+            })
+            if (v.length > 0 ) v = v.substring(0, v.length-1);
+            $("#select11").val(v);
+          }
+        })
+
+         // 下拉单选树
+         var zNodes1 =[
+			{id:1, pId:0, name:"北京"},
+			{id:2, pId:0, name:"天津"},
+			{id:3, pId:0, name:"上海"},
+			{id:6, pId:0, name:"重庆"},
+			{id:4, pId:0, name:"河北省"},
+			{id:41, pId:4, name:"石家庄"},
+			{id:42, pId:4, name:"保定"},
+			{id:43, pId:4, name:"邯郸"},
+			{id:44, pId:4, name:"承德"},
+			{id:5, pId:0, name:"广东省"},
+			{id:51, pId:5, name:"广州"},
+			{id:52, pId:5, name:"深圳"},
+			{id:53, pId:5, name:"东莞"},
+			{id:54, pId:5, name:"佛山"},
+			{id:6, pId:0, name:"福建省"},
+			{id:61, pId:6, name:"福州"},
+			{id:62, pId:6, name:"厦门"},
+			{id:63, pId:6, name:"泉州"},
+			{id:64, pId:6, name:"三明"}
+		 ]
+        $('#select1').jadeDropdown({
+          zNodes: zNodes1,
+          expandFlag:true,
+          selectFunc: function(nodes) {
+            var v = ''
+            nodes.forEach(function(item){
+              v += item.name + ','
+            })
+            if (v.length > 0 ) v = v.substring(0, v.length-1);
+            $("#select1").val(v);
+          }
+        })
+
+        // 下拉单选树带搜索
+        var zNodes2 = dataMaker(500)
+        $('#select2').jadeDropdown({
+          zNodes: zNodes2,
+          search:true,
+          selectFunc: function(nodes) {
+            var v = ''
+            nodes.forEach(function(item){
+              v += item.name + ','
+            })
+            if (v.length > 0 ) v = v.substring(0, v.length-1);
+            $("#select2").val(v);
+          }
+        });
+
+          // 下拉多选树
+          var zNodes3 =[
+			{id:1, pId:0, name:"北京"},
+			{id:2, pId:0, name:"天津"},
+			{id:3, pId:0, name:"上海"},
+			{id:6, pId:0, name:"重庆"},
+			{id:4, pId:0, name:"河北省"},
+			{id:41, pId:4, name:"石家庄"},
+			{id:42, pId:4, name:"保定"},
+			{id:43, pId:4, name:"邯郸"},
+			{id:44, pId:4, name:"承德"},
+			{id:5, pId:0, name:"广东省"},
+			{id:51, pId:5, name:"广州"},
+			{id:52, pId:5, name:"深圳"},
+			{id:53, pId:5, name:"东莞"},
+			{id:54, pId:5, name:"佛山"},
+			{id:6, pId:0, name:"福建省"},
+			{id:61, pId:6, name:"福州"},
+			{id:62, pId:6, name:"厦门"},
+			{id:63, pId:6, name:"泉州"},
+			{id:64, pId:6, name:"三明"}
+		 ]
+        $('#select3').jadeDropdown({
+          zNodes: zNodes3,
+          multiple: {enable: true  },
+          selectFunc: function(nodes) {
+            console.log(1313,nodes)
+            var v = ''
+            nodes.forEach(function(item){
+              v += item.name + ','
+            })
+            if (v.length > 0 ) v = v.substring(0, v.length-1);
+            $("#select3").val(v);
+          }
+        })
+      })
+    </script>
+  </body>
+</html>
