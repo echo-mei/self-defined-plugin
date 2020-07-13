@@ -1,0 +1,122 @@
+@charset "utf-8";
+/*下拉框:多选、单选*/
+.jade-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  z-index: 98;
+  width: 100%;
+  color: #444;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+  border: 1px solid #d9dfe9;
+}
+.jade-dropdown .dropdown-main {
+  max-height: 250px;
+  overflow: auto;
+}
+.jade-dropdown .dropdown-btn {
+  margin-top: 5px;
+  text-align: right;
+  background-color: #f5f5f5;
+  width: 100%;
+  border-top: 1px solid #e3e3e3;
+  padding: 3px 5px;
+}
+.jade-dropdown .dropdown-btn button {
+  font-size: 12px;
+  height: 20px;
+  margin-left: 5px;
+}
+.jade-dropdown .dropdown-search {
+  width: 100%;
+  padding: 5px;
+  position: relative;
+}
+.jade-dropdown .dropdown-search > input {
+  width: 100%;
+  border: 1px solid #d9dfe9;
+  height: 26px;
+  line-height: 26px;
+  font-size: 14px;
+  text-indent: 4px;
+}
+.jade-dropdown .dropdown-search i {
+  position: absolute;
+  display: inline-block;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  background: url('./img/search.png') no-repeat center transparent;
+  cursor: pointer;
+}
+.jade-dropdown .search-handle {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.jade-dropdown .search-handle .seacth-btn-wrap {
+  width: 15px;
+  display: inline-block;
+  height: 26px;
+}
+.jade-dropdown .search-handle .search-up-btn {
+  background: url('./img/pull-up.png') no-repeat center transparent;
+}
+.jade-dropdown .search-handle .search-down-btn {
+  background: url('./img/pull-down.png') no-repeat center transparent;
+  top: 12px;
+}
+.jade-dropdown .search-handle .search-hadle-btn {
+  position: absolute;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-size: 60%;
+}
+.jade-dropdown .search-handle .search-result-num {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 26px;
+  font-size: 12px;
+  color: #666666;
+}
+
+.jade-dropdown .ztree * {
+  font-size: 14px;
+  font-family: 'Microsoft Yahei', Verdana, Simsun, 'Segoe UI Web Light',
+    'Segoe UI Light', 'Segoe UI Web Regular', 'Segoe UI', 'Segoe UI Symbol',
+    'Helvetica Neue', Arial;
+}
+.jade-dropdown .ztree li {
+  line-height: 20px;
+}
+.jade-dropdown .ztree li a.curSelectedNode {
+  border: 0;
+  opacity:1;
+}
+.jade-dropdown .ztree li a:hover {
+  text-decoration: none;
+}
+.jade-dropdown .ztree li a {
+  color: #333;
+}
+.jade-dropdown .ztree li span {
+  font-size: 12px;
+  font-family: 'Microsoft Yahei', Helvetica, 'pragmatica-web', Arial, sans-serif;
+}
+
+.single-dropdown .ztree li a.curSelectedNode {
+  background-color: #d4d4d4;
+  border: 0;
+}
+.single-dropdown .ztree{padding: 0;}
+.single-dropdown .ztree li a{display: block;padding: 0 4px;}
+.single-data-dropdown .ztree li span.button.switch,
+.single-dropdown .ztree li span.button.switch{display:none;}
+.single-dropdown .ztree li a:hover {text-decoration:none; background-color: #E7E7E7;}
+.single-dropdown .ztree li a.curSelectedNode {background-color:#D4D4D4;border:0;}
+.single-data-dropdown .ztree li a.curSelectedNode {background-color: initial;}
+
